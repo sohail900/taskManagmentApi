@@ -1,8 +1,9 @@
 import { Router } from 'express'
-import { ErrorHandler } from '../handler/erroHandler'
+import { apiController } from '../controller/userController'
 const router = Router()
 
 router.route('/').get((req, res) => {
     res.send('first route')
 })
+router.route('/register').post(apiController.registerController)
 export default router
