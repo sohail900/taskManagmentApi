@@ -2,10 +2,11 @@ import { createTransport } from 'nodemailer'
 import { ErrorHandler } from '../handler/errorHandler'
 
 const transporter = createTransport({
-    service: 'gmail',
+    host: 'smtp.ethereal.email',
+    port: 587,
     auth: {
-        user: process.env.EMAIL_ADDRESS,
-        pass: process.env.EMAIL_PASSWORD,
+        user: process.env.ETHEREAL_EMAIL_ADDRESS,
+        pass: process.env.ETHEREAL_EMAIL_ADDRESS_PASSWORD,
     },
 })
 
@@ -28,7 +29,7 @@ export async function sendOtpEmail(email: string, otp: number | string) {
               This OTP is valid for 5 minutes. Please do not share it with anyone.
             </p>
             <div style="text-align: center; margin: 20px 0;">
-              <a href="https://yourcompany.com" style="text-decoration: none; font-size: 16px; color: #fff; background-color: #4CAF50; padding: 10px 20px; border-radius: 5px; display: inline-block;">
+              <a href="http://localhost:3000/api/v1" style="text-decoration: none; font-size: 16px; color: #fff; background-color: #4CAF50; padding: 10px 20px; border-radius: 5px; display: inline-block;">
                 Visit Our Website
               </a>
             </div>

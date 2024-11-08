@@ -9,7 +9,7 @@ await client.connect()
 
 /// STORED OTP TO MEMORY
 async function storeOtp(value: number) {
-    await client.set('otpValue', value, { EX: 60 })
+    await client.set('otpValue', value, { EX: 60 * 5 })
 }
 /// GET OTP FROM MEMORY
 async function getOtp() {

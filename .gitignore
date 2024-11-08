@@ -60,6 +60,7 @@ node_modules/
 jspm_packages/
 .env
 .http
+.gitignore
 # Snowpack dependency directory (https://snowpack.dev/)
 
 web_modules/
